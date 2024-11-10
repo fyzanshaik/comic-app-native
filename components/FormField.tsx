@@ -8,7 +8,7 @@ interface FormFieldsProps {
 	otherStyles: string;
 	placeholder: string;
 
-	keyboardType: string;
+	keyboardType?: string;
 }
 
 const FormField: React.FC<FormFieldsProps> = ({ title, value, handleChangeText, otherStyles, keyboardType, ...props }) => {

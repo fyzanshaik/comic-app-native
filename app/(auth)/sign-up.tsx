@@ -37,7 +37,7 @@ const SignUp = () => {
 		<SafeAreaView className="bg-primary h-full">
 			<ScrollView>
 				<View className="w-full min-h-[85vh] justify-center px-4 my-6  ">
-					<Image source={images.logo} resizeMode="contain" className="w-[115px] h-[35px]" />
+					<Image source={images.graphytlogo} resizeMode="contain" className="w-[115px] h-[100px]" />
 					<Text className="text-2xl text-white text-semibold font-psemibold mt-10">Sign Up</Text>
 
 					<FormField

@@ -1,7 +1,13 @@
 import { getCurrentUser } from '@/lib/appwrite';
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-type UserType = object | null;
+interface User {
+	$id: string;
+	username: string;
+	avatar: string;
+}
+
+type UserType = User | null;
 
 type GlobalContextType = {
 	isLoggedIn: boolean;
@@ -28,10 +34,16 @@ const GlobalProvider = ({ children }: { children: ReactNode }) => {
 
 	useEffect(() => {
 		getCurrentUser()
-			.then((res) => {
+			.then((res: any) => {
 				if (res) {
+					const userData: User = {
+						$id: res.$id,
+						username: res.username || 'Unknown',
+						avatar: res.avatar || 'default-avatar-url',
+					};
+
 					setIsLoggedIn(true);
-					setUser(res);
+					setUser(userData);
 				} else {
 					setIsLoggedIn(false);
 					setUser(null);

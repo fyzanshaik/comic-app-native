@@ -11,7 +11,7 @@ interface CustomButtonProps extends TouchableOpacityProps {
 const CustomButton: React.FC<CustomButtonProps> = ({ title, containerStyles, handlePress, isLoading, textStyles, ...props }) => {
 	return (
 		<TouchableOpacity
-			className={`bg-secondary-100 rounded-xl min-h-[62px] justify-center items-center ${containerStyles} ${isLoading ? 'opacity-50' : ''} `}
+			className={`bg-secondary-100 rounded-xl min-h-[52px] justify-center items-center ${containerStyles} ${isLoading ? 'opacity-50' : ''} `}
 			disabled={isLoading}
 			onPress={handlePress}
 			activeOpacity={0.7}
